@@ -6,7 +6,7 @@
 /*   By: rcarbonn <rcarbonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 23:58:22 by rcarbonn          #+#    #+#             */
-/*   Updated: 2023/12/19 12:04:15 by rcarbonn         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:34:39 by rcarbonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_free_map(t_game *game)
 	i = -1;
 	if (game->map)
 	{
-		while(++i < game->map_hight)
+		while (++i < game->map_hight)
 			free(game->map[i]);
 		free(game->map);
 	}
@@ -28,8 +28,8 @@ void	ft_free_map(t_game *game)
 void	ft_print_error(int err)
 {
 	if (err == ERROR_MALLOC)
-		ft_putstr_fd("Error\nMalloc_Failed\n", 2)
-	if (err == )
+		ft_putstr_fd("Error\nMalloc_Failed\n", 2) 
+	if (err ==)
 }
 
 static void	ft_clean_sprite(t_game *game)
