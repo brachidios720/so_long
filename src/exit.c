@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcarbonn <rcarbonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 23:58:22 by rcarbonn          #+#    #+#             */
-/*   Updated: 2023/12/21 15:34:39 by rcarbonn         ###   ########.fr       */
+/*   Updated: 2023/12/22 15:16:02 by raphaelcarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ void	ft_free_map(t_game *game)
 void	ft_print_error(int err)
 {
 	if (err == ERROR_MALLOC)
-		ft_putstr_fd("Error\nMalloc_Failed\n", 2) 
-	if (err ==)
-}
+		ft_putstr_fd("Error\nMalloc_Failed\n", 2); 
+	if (err == MLX_PROB)
+		ft_putstr_fd("Error\nMLX_Failed\n" 2);
+	if (err == )
+}	
 
 static void	ft_clean_sprite(t_game *game)
 {
@@ -54,6 +56,20 @@ static void	ft_clean_sprite(t_game *game)
 
 void	ft_exit(t_game *game, int err)
 {
-	t_game *ga;
-	ft_print_error()
+	ft_print_error(err);
+	if(game)
+	{
+		if(game->map)
+			ft_free_map(game);
+		ft_clean_sprite(game);
+		if(game->window)
+			mlx_destroy_display_window(game->mlx, game->window);
+		if(game->mlx)
+		{
+			mlx_destroy_display(game->mlx);
+			free(game->mlx);
+		}
+		free(game);
+	}
+	exite(0);
 }

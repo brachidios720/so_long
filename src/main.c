@@ -3,39 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcarbonn <rcarbonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:22:39 by rcarbonn          #+#    #+#             */
-/*   Updated: 2023/12/21 15:45:07 by rcarbonn         ###   ########.fr       */
+/*   Updated: 2023/12/22 15:19:14 by raphaelcarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	init_game(t_game *game, char **argv)
+void	ft_init_structure(t_game *game, char **argv)
 {
 	game->filename = argv[1];
-	game->player = 0
-	game->x = 0;
-	game->y = 0;
+	game->map = NULL;
+	game->map_width = 0;
+	game->map_height = 0;
+	game->collectible = 0;
+	game->player = 0;
 	game->end = 0;
 	game->nb_move = 0;
-	game->width = 0;
-	game->height = 0;
+	game->player_pos_x = 0;
+	game->player_pos_y = 0;
 	game->sprite_player_1 = NULL;
 	game->sprite_player_2 = NULL;
-	game->sprite_end = NULL;
 	game->sprite_collectible = NULL;
+	game->sprite_end = NULL;
 	game->sprite_air = NULL;
 	game->sprite_rock = NULL;
 	game->mlx = mlx_init();
-	if(game->mlx != mlx_init)
-		ft_exit()
+	if (!game->mlx)
+		ft_exit(game, ERROR_MLX);
 	game->window = NULL;
-	game->image_size = 0;
+	game->img_size = 0;
+	game->win_width = 0;
+	game->win_height = 0;
 	game->sprite_sun = NULL;
 	game->sprite_bat_danger = NULL;
 }
+
 
 int	main(int argc, char **argv)
 {
