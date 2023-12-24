@@ -6,11 +6,11 @@
 /*   By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:22:39 by rcarbonn          #+#    #+#             */
-/*   Updated: 2023/12/22 15:19:14 by raphaelcarb      ###   ########.fr       */
+/*   Updated: 2023/12/24 01:58:01 by raphaelcarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	ft_init_structure(t_game *game, char **argv)
 {
@@ -49,10 +49,10 @@ int	main(int argc, char **argv)
 	
 	mlx = mlx_init();
 	if (argc != 2)
-		return ();
+		ft_exit(game, ERROR_USAGE);
 	game = (t_game *)malloc(sizeof(t_game));
 	if (!game)
-		return ();
+		ft_exit(game, ERROR_MALLOC);
 	// verifier les .ber
 	// gerer mlx init pour gerer les erruer d ouverture
 	// utilisation de get_next_line
