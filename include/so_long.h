@@ -6,7 +6,7 @@
 /*   By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:22:49 by rcarbonn          #+#    #+#             */
-/*   Updated: 2023/12/24 01:58:25 by raphaelcarb      ###   ########.fr       */
+/*   Updated: 2023/12/25 19:35:32 by raphaelcarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,14 @@
 
   
 # define IMAGE_SIZE			50
+# define ERROR				0
 # define SUCCESS			1
 # define ERROR_MALLOC		-2
 # define MLX_PROB			-3
 # define OPEN_ERROR			-4
 # define ERROR_USAGE		-4
+# define ERROR_WALL			-5
+# define ERROR_MAP_SIZE		-6
 
 typedef struct s_game
 {

@@ -6,7 +6,7 @@
 /*   By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 23:58:22 by rcarbonn          #+#    #+#             */
-/*   Updated: 2023/12/24 01:59:42 by raphaelcarb      ###   ########.fr       */
+/*   Updated: 2023/12/24 02:05:51 by raphaelcarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_print_error(int err)
 		ft_putstr_fd("Error\nOpen_Error\n", 2);
 	if (err == ERROR_USAGE)
 		ft_putstr_fd("Error\nInvalid_Arguments\n", 2);
-	if	(err ==  )
+	if	(err == )
 }	
 
 static void	ft_clean_sprite(t_game *game)

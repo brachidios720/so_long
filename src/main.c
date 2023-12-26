@@ -6,7 +6,7 @@
 /*   By: raphaelcarbonnel <raphaelcarbonnel@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:22:39 by rcarbonn          #+#    #+#             */
-/*   Updated: 2023/12/24 01:58:01 by raphaelcarb      ###   ########.fr       */
+/*   Updated: 2023/12/24 02:05:40 by raphaelcarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_init_structure(t_game *game, char **argv)
 	game->sprite_rock = NULL;
 	game->mlx = mlx_init();
 	if (!game->mlx)
-		ft_exit(game, ERROR_MLX);
+		ft_exit(game, MLX_PROB);
 	game->window = NULL;
 	game->img_size = 0;
 	game->win_width = 0;
@@ -53,6 +53,8 @@ int	main(int argc, char **argv)
 	game = (t_game *)malloc(sizeof(t_game));
 	if (!game)
 		ft_exit(game, ERROR_MALLOC);
+	ft_init_structure(game, argv);
+	
 	// verifier les .ber
 	// gerer mlx init pour gerer les erruer d ouverture
 	// utilisation de get_next_line
